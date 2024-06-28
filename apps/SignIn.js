@@ -11,7 +11,7 @@ export class SignIn extends plugin {
       priority: 1009,
       rule: [
         {
-          reg: "^(～鸣潮|~鸣潮)签到$",
+          reg: "^(～|~|鸣潮)签到$",
           fnc: "signIn",
         },
       ],

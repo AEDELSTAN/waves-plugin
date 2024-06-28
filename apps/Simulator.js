@@ -13,7 +13,7 @@ export class Simulator extends plugin {
       priority: 1009,
       rule: [
         {
-          reg: "^(～鸣潮|~鸣潮)(角色|武器)?(十连|抽卡)$",
+          reg: "^(～|~|鸣潮)(角色|武器)?(十连|抽卡)$",
           fnc: "simulator",
         },
       ],

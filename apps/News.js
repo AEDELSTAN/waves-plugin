@@ -10,7 +10,7 @@ export class News extends plugin {
       priority: 1009,
       rule: [
         {
-          reg: "^(～鸣潮|~鸣潮)(活动|新闻|公告)$",
+          reg: "^(～|~|鸣潮)(活动|新闻|公告)$",
           fnc: "queryNews",
         },
       ],

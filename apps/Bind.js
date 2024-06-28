@@ -11,11 +11,11 @@ export class BindToken extends plugin {
       priority: 1009,
       rule: [
         {
-          reg: "^(～鸣潮|~鸣潮)(登录|登陆|绑定).*$",
+          reg: "^(～|~|鸣潮)(登录|登陆|绑定).*$",
           fnc: "bindToken",
         },
         {
-          reg: "^(～鸣潮|~鸣潮)解绑.*$",
+          reg: "^(～|~|鸣潮)解绑.*$",
           fnc: "unbindToken",
         },
         {
@@ -27,7 +27,7 @@ export class BindToken extends plugin {
   }
 
   async bindToken(e) {
-    const message = e.msg.replace(/^(～鸣潮|~鸣潮)(登录|登陆|绑定)/, "").trim();
+    const message = e.msg.replace(/^(～|~|鸣潮)(登录|登陆|绑定)/, "").trim();
 
     const waves = new Waves();
     let token;
@@ -150,7 +150,7 @@ export class BindToken extends plugin {
       return await e.reply("当前没有绑定任何账号，请使用[~登录]进行绑定");
     }
 
-    let roleId = e.msg.replace(/^(～鸣潮|~鸣潮)解绑/, "").trim();
+    let roleId = e.msg.replace(/^(～|~|鸣潮)解绑/, "").trim();
     if (!roleId || !accountList.map((item) => item.roleId).includes(roleId)) {
       let msg = "当前绑定的特征码有：";
       accountList.forEach((item) => {
