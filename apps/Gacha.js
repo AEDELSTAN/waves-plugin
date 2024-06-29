@@ -145,21 +145,16 @@ export class Gacha extends plugin {
     return true;
   }
 
-  async dataFormat(data, type) {
-    const wiki = new Wiki();
-    const result = {
-      pool: CardPoolTypes[type],
-      total: data.length,
-      five_num: data.filter((item) => item.qualityLevel === 5).length,
-      four_num: data.filter((item) => item.qualityLevel === 4).length,
-      average:
-        (data.findIndex((item) => item.qualityLevel === 5) === -1 ||
-        data.filter((item) => item.qualityLevel === 5).length === 0
-          ? 0
-          : (data.length - data.findIndex((item) => item.qualityLevel === 5)) /
-            data.filter((item) => item.qualityLevel === 5).length) * 160,
-      five_star: [],
-    };
+    async dataFormat(data, type) {
+        const wiki = new Wiki();
+        const result = {
+            "pool": CardPoolTypes[type],
+            "total": data.length,
+            "five_num": data.filter(item => item.qualityLevel === 5).length,
+            "four_num": data.filter(item => item.qualityLevel === 4).length,
+            "average": Math.round(((data.findIndex(item => item.qualityLevel === 5) === -1 || data.filter(item => item.qualityLevel === 5).length === 0) ? 0 : (data.length - data.findIndex(item => item.qualityLevel === 5)) / data.filter(item => item.qualityLevel === 5).length) * 160),
+            "five_star": []
+        };
 
     const fiveStarIndexes = data
       .map((item, index) => (item.qualityLevel === 5 ? index : -1))
