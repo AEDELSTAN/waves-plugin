@@ -9,19 +9,19 @@ export class Setting extends plugin {
       priority: 1009,
       rule: [
         {
-          reg: "^(～|~|鸣潮)(开启|关闭)自动签到$",
+          reg: "^(～|~)?(鸣潮|mc)?(开启|关闭)自动签到$",
           fnc: "setAutoSign",
         },
         {
-          reg: "^(～|~|鸣潮)(开启|关闭)(波片|体力)?推送$",
+          reg: "^(～|~)?(鸣潮|mc)?(开启|关闭)(波片|体力)?推送$",
           fnc: "setAutoPush",
         },
         {
-          reg: "^(～|~|鸣潮)(开启|关闭)(公告|新闻|活动)推送$",
+          reg: "^(～|~)?(鸣潮|mc)?(开启|关闭)(公告|新闻|活动)推送$",
           fnc: "setAutoNews",
         },
         {
-          reg: "^(～|~|鸣潮)(波片|体力)阈值.*$",
+          reg: "^(～|~)?(鸣潮|mc)?(波片|体力)阈值.*$",
           fnc: "setSanityThreshold",
         },
       ],
@@ -126,7 +126,7 @@ export class Setting extends plugin {
   }
 
   async setSanityThreshold(e) {
-    const threshold = e.msg.replace(/^(～|~|鸣潮)(波片|体力)阈值/, "");
+    const threshold = e.msg.replace(/^(～|~)?(鸣潮|mc)?(波片|体力)阈值/, "");
     if (!/^\d+$/.test(threshold)) {
       await e.reply("波片阈值必须是数字，请重新输入");
       return true;

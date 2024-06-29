@@ -10,7 +10,7 @@ export class Emoji extends plugin {
       priority: 1009,
       rule: [
         {
-          reg: "^(～|~|鸣潮)(随机)?(表情包)$",
+          reg: "^(～|~)?(鸣潮|mc)?(随机)?(表情包)$",
           fnc: "emoji",
         },
       ],

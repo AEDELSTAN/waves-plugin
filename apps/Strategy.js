@@ -11,7 +11,7 @@ export class Strategy extends plugin {
       priority: 1009,
       rule: [
         {
-          reg: "^(～|~|鸣潮)?.*攻略$",
+          reg: "^(～|~)?(鸣潮|mc)??.*攻略$",
           fnc: "strategy",
         },
       ],
@@ -19,7 +19,7 @@ export class Strategy extends plugin {
   }
 
   async strategy(e) {
-    const match = e.msg.match(/(～|~|鸣潮)?(.*?)攻略/);
+    const match = e.msg.match(/(～|~)?(鸣潮|mc)??(.*?)攻略/);
     if (!match || !match[2]) {
       return false;
     }

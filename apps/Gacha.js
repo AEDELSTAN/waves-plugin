@@ -24,7 +24,7 @@ export class Gacha extends plugin {
       priority: 1009,
       rule: [
         {
-          reg: "^(～|~|鸣潮)(常驻(武器|角色)|限定(武器|角色))?抽卡(统计|分析|记录)([\\s\\S]*)$",
+          reg: "^(～|~)?(鸣潮|mc)?(常驻(武器|角色)|限定(武器|角色))?抽卡(统计|分析|记录)([\\s\\S]*)$",
           fnc: "gachaCount",
         },
       ],
@@ -33,7 +33,7 @@ export class Gacha extends plugin {
 
   async gachaCount(e) {
     let message = e.msg.replace(
-      /^(～|~|鸣潮)(常驻(武器|角色)|限定(武器|角色))?抽卡(统计|分析|记录)/,
+      /^(～|~)?(鸣潮|mc)?(常驻(武器|角色)|限定(武器|角色))?抽卡(统计|分析|记录)/,
       ""
     );
 

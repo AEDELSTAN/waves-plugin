@@ -12,15 +12,15 @@ export class Help extends plugin {
       priority: 1008,
       rule: [
         {
-          reg: "^(～|~|鸣潮)帮助$",
+          reg: "^(～|~)?(鸣潮|mc)?帮助$",
           fnc: "help",
         },
         {
-          reg: "^(～|~|鸣潮)(登录|登陆|绑定)帮助$",
+          reg: "^(～|~)?(鸣潮|mc)?(登录|登陆|绑定)帮助$",
           fnc: "bindHelp",
         },
         {
-          reg: "^(～|~|鸣潮)(抽卡统计|抽卡|统计)帮助$",
+          reg: "^(～|~)?(鸣潮|mc)?(抽卡统计|抽卡|统计)帮助$",
           fnc: "gachaHelp",
         },
       ],

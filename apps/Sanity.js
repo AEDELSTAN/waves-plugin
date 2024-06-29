@@ -11,7 +11,7 @@ export class Sanity extends plugin {
       priority: 1009,
       rule: [
         {
-          reg: "^(～|~|鸣潮)(波片|体力|日常数据)$",
+          reg: "^(～|~)?(鸣潮|mc)?(波片|体力|日常数据)$",
           fnc: "querySanity",
         },
       ],
